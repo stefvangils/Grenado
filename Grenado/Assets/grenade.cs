@@ -34,10 +34,13 @@ public class grenade : MonoBehaviour {
         Collider[] colliders = Physics.OverlapSphere(transform.position, radius);
         foreach(Collider nearbyObject in colliders)
         {
+            
             Rigidbody rb = nearbyObject.GetComponent<Rigidbody>();
-            if(rb != null)
-            {              
+            if(rb != null && rb.gameObject.tag != "Player")
+            {
+                
                 rb.AddExplosionForce(force, transform.position, radius);
+                Destroy(nearbyObject);
             }
         }
 

@@ -111,9 +111,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12b6d9a60b3feed4f93146c332b4be49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delay: 12
-  radius: 5
-  force: 400
+  delay: 10
+  radius: 13
+  force: 600
   explosionEffect: {fileID: 1000011797152326, guid: acf39d9f4addf294d93fa56fa373961b,
     type: 2}
 --- !u!136 &136733495594087212

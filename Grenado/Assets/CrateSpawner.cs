@@ -16,7 +16,7 @@ public class CrateSpawner : MonoBehaviour {
 
     void spawnCrate()
     {
-        GameObject crate = Instantiate(cratePrefab, transform.position + transform.forward * 1, transform.rotation);
+        GameObject crate = Instantiate(cratePrefab, transform.position + transform.forward * 5 + transform.up * 5, transform.rotation);
         Rigidbody rb = crate.GetComponent<Rigidbody>();
     }
 }
