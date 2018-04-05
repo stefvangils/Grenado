@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 114644359051699156}
   m_Layer: 0
   m_Name: Grenade
-  m_TagString: Untagged
+  m_TagString: Grenade
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -114,6 +114,8 @@ MonoBehaviour:
   delay: 10
   radius: 13
   force: 600
+  ExplosionSound: {fileID: 1755077834656434, guid: 0bb0ff8de2aa5264383f08c18074c98a,
+    type: 2}
   explosionEffect: {fileID: 1000011797152326, guid: acf39d9f4addf294d93fa56fa373961b,
     type: 2}
 --- !u!136 &136733495594087212

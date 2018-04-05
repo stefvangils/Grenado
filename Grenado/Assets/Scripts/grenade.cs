@@ -8,6 +8,9 @@ public class grenade : MonoBehaviour {
     public float radius = 5f;
     public float force = 700f;
 
+
+    public GameObject ExplosionSound;
+
     public GameObject explosionEffect;
 
     float countdown;
@@ -15,7 +18,7 @@ public class grenade : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         countdown = delay;
-	}
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -29,14 +32,14 @@ public class grenade : MonoBehaviour {
 
     void explode()
     {
-        Instantiate(explosionEffect, transform.position, transform.rotation);
-
+        GameObject explosion = Instantiate(explosionEffect, transform.position, transform.rotation);
+        Instantiate(ExplosionSound, explosion.transform);
         Collider[] colliders = Physics.OverlapSphere(transform.position, radius);
         foreach(Collider nearbyObject in colliders)
         {
             
             Rigidbody rb = nearbyObject.GetComponent<Rigidbody>();
-            if(rb != null && rb.gameObject.tag != "Player")
+            if(rb != null && rb.gameObject.tag != "Player" && rb.gameObject.tag != "Grenade")
             {
                 
                 rb.AddExplosionForce(force, transform.position, radius);
