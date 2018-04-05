@@ -23,8 +23,7 @@ public class grenade : MonoBehaviour {
         if(countdown <= 0f && !hasExploded)
         {
             explode();
-            hasExploded = true;
-            Debug.Log(hasExploded);
+            hasExploded = true;           
         }
 	}
 
@@ -37,8 +36,7 @@ public class grenade : MonoBehaviour {
         {
             Rigidbody rb = nearbyObject.GetComponent<Rigidbody>();
             if(rb != null)
-            {
-                Debug.Log(rb);
+            {              
                 rb.AddExplosionForce(force, transform.position, radius);
             }
         }
