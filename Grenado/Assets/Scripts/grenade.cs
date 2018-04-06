@@ -13,10 +13,14 @@ public class grenade : MonoBehaviour {
 
     public GameObject explosionEffect;
 
+    public GameController gameController;
+
+
     float countdown;
     bool hasExploded = false;
 	// Use this for initialization
 	void Start () {
+        gameController = GameObject.Find("GameController").GetComponent<GameController>();
         countdown = delay;
     }
 	
@@ -39,10 +43,11 @@ public class grenade : MonoBehaviour {
         {
             
             Rigidbody rb = nearbyObject.GetComponent<Rigidbody>();
-            if(rb != null && rb.gameObject.tag != "Player" && rb.gameObject.tag != "Grenade")
+            if(rb != null && rb.gameObject.tag == "Crate")
             {
                 
                 rb.AddExplosionForce(force, transform.position, radius);
+                gameController.SubtractLives();
                 Destroy(nearbyObject);
             }
         }
