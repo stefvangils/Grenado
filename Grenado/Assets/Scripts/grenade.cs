@@ -47,7 +47,7 @@ public class grenade : MonoBehaviour {
             {
                 
                 rb.AddExplosionForce(force, transform.position, radius);
-                gameController.SubtractLives();
+                gameController.SubtractLives(nearbyObject.GetComponent<crate>());
                 Destroy(nearbyObject);
             }
         }

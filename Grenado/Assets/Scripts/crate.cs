@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour {
-    
+public class crate : MonoBehaviour {
+    public int player;
 	// Use this for initialization
 	void Start () {
 		
