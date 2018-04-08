@@ -623,6 +623,7 @@ RectTransform:
   - {fileID: 709033960}
   - {fileID: 1779584821}
   - {fileID: 2059106551}
+  - {fileID: 1199515163}
   m_Father: {fileID: 875293553}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -683,7 +684,7 @@ MonoBehaviour:
   throwForce: 45
   grenadePrefab: {fileID: 1079253360494086, guid: 2c575969ddbe40647beea84b971a339b,
     type: 2}
-  gameController: {fileID: 0}
+  gameController: {fileID: 1859669505}
 --- !u!114 &1119274852
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -697,7 +698,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cratePrefab: {fileID: 1357469309694388, guid: 9504641147e120242b61fbb515a6c302,
     type: 2}
-  gameController: {fileID: 0}
+  gameController: {fileID: 1859669505}
 --- !u!1 &1189513475
 GameObject:
   m_ObjectHideFlags: 0
@@ -760,6 +761,80 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1199515160
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1199515163}
+  - component: {fileID: 1199515162}
+  - component: {fileID: 1199515161}
+  m_Layer: 5
+  m_Name: wintext
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &1199515161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1199515160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 50
+    m_FontStyle: 1
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 50
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Player Wins!
+--- !u!222 &1199515162
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1199515160}
+--- !u!224 &1199515163
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1199515160}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 3.4155242, y: 3.6071322, z: 2.1625783}
+  m_Children: []
+  m_Father: {fileID: 1051998558}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 2220, y: -1050}
+  m_SizeDelta: {x: 322.3, y: 85.7}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1309688367 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100002, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
@@ -779,7 +854,7 @@ MonoBehaviour:
   throwForce: 45
   grenadePrefab: {fileID: 1079253360494086, guid: 2c575969ddbe40647beea84b971a339b,
     type: 2}
-  gameController: {fileID: 0}
+  gameController: {fileID: 1859669505}
 --- !u!114 &1309688373
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -793,7 +868,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cratePrefab: {fileID: 1357469309694388, guid: 9504641147e120242b61fbb515a6c302,
     type: 2}
-  gameController: {fileID: 0}
+  gameController: {fileID: 1859669505}
 --- !u!1001 &1511998315
 Prefab:
   m_ObjectHideFlags: 0
@@ -996,7 +1071,7 @@ Prefab:
     - target: {fileID: 114453299409978302, guid: c4ef7c828f2e776499d113e787e55f3f,
         type: 2}
       propertyPath: buildmode
-      value: 2
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 114453299409978302, guid: c4ef7c828f2e776499d113e787e55f3f,
         type: 2}
@@ -1018,6 +1093,27 @@ Prefab:
       propertyPath: BuildmodeActive
       value: 
       objectReference: {fileID: 2059106552}
+    - target: {fileID: 114453299409978302, guid: c4ef7c828f2e776499d113e787e55f3f,
+        type: 2}
+      propertyPath: Win
+      value: 
+      objectReference: {fileID: 1199515161}
+    - target: {fileID: 114453299409978302, guid: c4ef7c828f2e776499d113e787e55f3f,
+        type: 2}
+      propertyPath: PlayerOneLives
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114453299409978302, guid: c4ef7c828f2e776499d113e787e55f3f,
+        type: 2}
+      propertyPath: PlayerTwoLives
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114453299409978302, guid: c4ef7c828f2e776499d113e787e55f3f,
+        type: 2}
+      propertyPath: backgroundMusic
+      value: 
+      objectReference: {fileID: 1869288244217132, guid: 45e0c548f049edf4f8de041d0fc5a17b,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c4ef7c828f2e776499d113e787e55f3f, type: 2}
   m_IsPrefabParent: 0
@@ -1067,8 +1163,8 @@ MonoBehaviour:
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 2100000, guid: 547f2e9db866947dabf6f55d8673905d, type: 2}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Material: {fileID: 2100000, guid: d695529081158d44f84e349bd501fde6, type: 2}
+  m_Color: {r: 0.7607844, g: 0.7607844, b: 0.7607844, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1200,6 +1296,7 @@ MonoBehaviour:
   Grenades: {fileID: 709033961}
   Crates: {fileID: 1779584822}
   BuildmodeActive: {fileID: 2059106552}
+  Win: {fileID: 1199515161}
   PlayerOneLives: 5
   PlayerTwoLives: 5
   throws: 3
@@ -1207,7 +1304,9 @@ MonoBehaviour:
   player1: {fileID: 1895347953}
   player2: {fileID: 407347761}
   playerTurn: 1
-  buildmode: 2
+  buildmode: 10
+  backgroundMusic: {fileID: 1869288244217132, guid: 45e0c548f049edf4f8de041d0fc5a17b,
+    type: 2}
 --- !u!4 &1859669506
 Transform:
   m_ObjectHideFlags: 0

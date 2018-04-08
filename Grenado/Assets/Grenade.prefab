@@ -112,7 +112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delay: 10
-  radius: 13
+  radius: 12
   force: 600
   ExplosionSound: {fileID: 1755077834656434, guid: 0bb0ff8de2aa5264383f08c18074c98a,
     type: 2}

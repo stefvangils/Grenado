@@ -10,6 +10,7 @@ public class GameController : MonoBehaviour {
     public Text Grenades;
     public Text Crates;
     public Text BuildmodeActive;
+    public Text Win;
 
     public int PlayerOneLives;
     public int PlayerTwoLives;
@@ -19,12 +20,18 @@ public class GameController : MonoBehaviour {
     public GameObject player1;
     public GameObject player2;
 
+    
     public bool playerTurn = true;
     public float buildmode;
-    
+
+    public GameObject backgroundMusic;
+
+
+    bool gameFinished = false;
     // Use this for initialization
     void Start () {
         throwLeft = throws;
+        Instantiate(backgroundMusic);
     }
 	
 	// Update is called once per frame
@@ -32,24 +39,28 @@ public class GameController : MonoBehaviour {
         UpdateUI();          
     }
 
-    public void SubtractLives(crate crateje)
+    public void SubtractLives(crate crateObj)
     {
-        int player = crateje.GetComponent<crate>().player;
+        int player = crateObj.GetComponent<crate>().player;
         if (player == 1)
         {
             PlayerOneLives = PlayerOneLives - 1;
-            if (PlayerOneLives <= 0)
+            if (PlayerOneLives <= 0 && gameFinished == false)
             {
-                Debug.Log("player 2 wins");
+                Win.gameObject.SetActive(true);
+                Win.text = "player 2 wins";
+                gameFinished = true;
             }
         }
 
         else
         {
             PlayerTwoLives = PlayerTwoLives - 1;
-            if (PlayerTwoLives <= 0)
+            if (PlayerTwoLives <= 0 && gameFinished == false)
             {
-                Debug.Log("player 1 wins");
+                Win.gameObject.SetActive(true);
+                Win.text = "player 1 wins";
+                gameFinished = true;
             }
         }
         

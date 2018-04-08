@@ -14,7 +14,7 @@ public class CrateSpawner : MonoBehaviour {
 
     void Start()
     {
-        gameController = GameObject.Find("GameController").GetComponent<GameController>();
+        
     }
     // Update is called once per frame
     void Update () {
@@ -53,8 +53,7 @@ public class CrateSpawner : MonoBehaviour {
 
     void spawnCrate()
     {
-        GameObject crate = Instantiate(cratePrefab, transform.position + transform.forward * 5 + transform.up * 5, transform.rotation);
-        Rigidbody rb = crate.GetComponent<Rigidbody>();
+        GameObject crate = Instantiate(cratePrefab, transform.position + transform.forward * 5 + transform.up * 5, transform.rotation);        
         if (gameController.playerTurn == true)
         {
             crate.GetComponent<crate>().player = 1;

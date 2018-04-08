@@ -6,7 +6,7 @@ public class grenade : MonoBehaviour {
 
     public float delay = 3f;
     public float radius = 5f;
-    public float force = 700f;
+    public float force;
 
 
     public GameObject ExplosionSound;
@@ -20,7 +20,6 @@ public class grenade : MonoBehaviour {
     bool hasExploded = false;
 	// Use this for initialization
 	void Start () {
-        gameController = GameObject.Find("GameController").GetComponent<GameController>();
         countdown = delay;
     }
 	

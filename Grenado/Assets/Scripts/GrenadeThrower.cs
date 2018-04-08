@@ -14,7 +14,7 @@ public class GrenadeThrower : MonoBehaviour {
     float force;
     void Start()
     {
-        gameController = GameObject.Find("GameController").GetComponent<GameController>();
+        
     }
 
     void Update () {
@@ -26,15 +26,20 @@ public class GrenadeThrower : MonoBehaviour {
         //    }
            
         //}  
-        if(Input.GetKey(KeyCode.G) && gameController.buildmode <= 0 && gameController.throwLeft > 0)
+        
+        if(Input.GetMouseButton(0) && gameController.buildmode <= 0 && gameController.throwLeft > 0)
         {
             timer += Time.deltaTime;
             Loadbar.fillAmount = timer / 4;
             
         }
-        if(Input.GetKeyUp(KeyCode.G) && gameController.buildmode <= 0 && gameController.throwLeft > 0)
+        if(Input.GetMouseButtonUp(0) && gameController.buildmode <= 0 && gameController.throwLeft > 0)
         {
             force = (throwForce / 2) * timer;
+            if(force >= 95)
+            {
+                force = 95;
+            }
             timer = 0;
             Loadbar.fillAmount = timer;            
             Debug.Log(force);
@@ -44,8 +49,10 @@ public class GrenadeThrower : MonoBehaviour {
 
     void ThrowGrenade()
     {
-        GameObject grenade = Instantiate(grenadePrefab, transform.position + transform.forward * 1, transform.rotation);
-        Rigidbody rb = grenade.GetComponent<Rigidbody>();
+        GameObject grenadeObj = Instantiate(grenadePrefab, transform.position + transform.forward * 1, transform.rotation);
+        grenade grenadeScript = grenadeObj.GetComponent<grenade>();
+        grenadeScript.gameController = gameController;
+        Rigidbody rb = grenadeObj.GetComponent<Rigidbody>();
         rb.AddForce(transform.forward * force, ForceMode.Impulse);
         force = 0;
         gameController.Thrower();
